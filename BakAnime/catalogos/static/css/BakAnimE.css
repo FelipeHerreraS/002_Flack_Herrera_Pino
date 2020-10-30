@@ -1,0 +1,322 @@
+@import url(Fonts.css);
+.headerDePana {
+    padding: 1em 1em 1em 1em !important;
+    margin: 0rem 2em 0rem 2em !important;
+    display: block;
+}
+
+
+.headerDePana .textoBanner {
+    font-size: 5px;
+}
+
+body {
+    background: url(../img/fondo.jpg) !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+.blog {
+    width: auto;
+    clear: both;
+    padding: 0em 1em 0em 1em;
+    margin-right: 24em;
+    margin-left: 2em;
+    position: relative;
+}
+
+.blog-content {
+    clear: both;
+    padding: 0em 1em 0em 1em;
+    box-shadow: 0 0 5px;
+    display: flex;
+    float: left;
+    justify-content: center;
+    margin-bottom: 1em;
+    background-color: rgba(255, 255, 255, 0.638);
+}
+
+.blog-content h1{
+    padding: .5em 0em .5em 0em;
+    text-align: center;
+}
+
+.blog-article{
+    clear: both;
+    max-width: 800px;
+    display: block;
+    width: 100% !important;
+}
+
+.blog-title{
+    font-family: Josefin !important;
+}
+
+.blog-title h1{
+    font-size: 3em;
+    text-align: center;
+}
+
+.blog-sinopsis{
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+}
+
+.blog-information{
+    text-align: center;
+    font-family: Roboto !important;
+}
+
+.blog-center {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.table-img{
+    height: 30px !important;
+    width: 30px !important; 
+}
+
+.blog-galeria{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    clear: both;
+}
+.blog-galeria p{
+    text-align: center;
+}
+
+.mg{
+    height: auto;
+    max-height: 100%;
+}
+
+.blog-center-photos{
+    display: block;
+    padding: .5rem 1rem
+}
+
+/* Tablets en horizonal y escritorios normales
+   ------------------------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1199px) 
+    { 
+        .blog{
+            display: block;
+            width: auto;
+            margin: 0em 2rem 0 2rem !important;
+        }
+        .blog-galeria p{
+            display: block;
+            width: auto;
+            text-align: center;
+            height: 300px;
+        }
+
+        .blog-center {
+            display: flex;
+            text-align: justify;
+        }
+        .blog-center-photos{
+            display: flex;
+            margin: auto;
+            height: auto;
+            clear: both;
+        }
+    }
+ 
+/* Móviles en horizontal o tablets en vertical
+   ------------------------------------------------------------------------- */
+@media (max-width: 767px) { 
+    .blog {
+        max-width: 763px;
+        display: block;
+        width: auto;
+        margin: auto;
+    }
+    .blog-title{
+        display: block;
+        font-size: .84em;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .blog-information{
+        text-align: center;
+    }
+    .headerDePana {
+        clear: both;
+        width: auto;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .blog-galeria p{
+        display: block;
+        width: auto;
+        text-align: center;
+        height: 220px;
+    }
+    .blog-center-photos{
+        display: flex;
+        margin: auto;
+        height: auto;
+        clear: both;
+    }
+}
+ 
+/* Móviles en vertical
+   ------------------------------------------------------------------------- */
+@media (max-width: 480px) { 
+    .blog {
+        display: block;
+        max-width: 470px;
+        width: auto;
+        margin: auto;
+    }
+    .blog-title{
+        display: block;
+        font-size: .7em;
+    }
+
+    .headerDePana {
+        width: auto;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .blog-galeria p{
+        text-align: center;
+        height: 150px;
+        width: auto;
+    }
+    .blog-center-photos{
+        display: flex;
+        margin: auto;
+        height: auto;
+        clear: both;
+    }
+}
+
+
+.container-right {
+    position: relative;
+    padding: 0 1em 0em 1em;
+    margin: 0em 2em 0em 2em;
+}
+
+.container-right-content{
+    border: black;
+    border-radius: 1em;
+    box-shadow: 0 0 5px;
+    display: block;
+    float: right;
+    width: auto;
+    text-align: left;
+    height: auto;
+    background-color:rgba(248, 233, 217, 0.7);
+}
+
+.container-right-content h1{
+    padding: .5em 1em .5em 1em;
+    margin: 0 0em 0 0em;
+    text-align: left;
+    font-size: 1.3em;
+}
+
+.search-aside {
+    padding-bottom: 1em;
+    margin: auto;
+    justify-content: center;
+}
+
+.container-icons {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 80px 5px 80px;
+    font-size: 50px !important;
+}
+
+/* Tablets en horizonal y escritorios normales
+   ------------------------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .container-right-content{
+        clear: both;
+        width: auto;
+        float: none;
+        text-align: center;
+       }
+    .container-right{
+        clear: both;
+       }
+   }
+
+/* Móviles en horizontal o tablets en vertical
+  ------------------------------------------------------------------------- */
+@media (min-width:500px) and (max-width: 767px) { 
+    .container-right-content{
+        width: auto;
+        float: none;
+        text-align: center;
+       }
+    .container-right{
+        clear: both;
+        margin: auto;
+       }
+   }
+
+/* Móviles en vertical
+  ------------------------------------------------------------------------- */
+@media (max-width: 480px) { 
+    .container-right-content{
+        width: auto;
+        float: none;
+        text-align: center;
+       }
+    .container-right{
+        clear: both;
+        margin: auto;
+       }
+   }
+   
+.comunidad {
+    border: black;
+    box-shadow: 0 0 5px;
+}
+
+.titulos {
+    padding: 1.5em 0 1.5em 0;
+    text-align: center;
+}
+
+.comunidad-links {
+    margin: 2px 2px 2px 2px;
+    padding: 10px 10px 10px 10px;
+    background-color: rgba(66,64,212,1);
+    color: white !important;
+    text-decoration: none !important;
+    align-items: center !important;
+    border-radius: 10px !important;
+}
+
+.comunidad-links a {
+    color: white;
+}
+
+.comunidad-links a:focus,
+.comunidad-links a:hover{
+    color: white;
+    background-color: rgb(255, 174, 0);
+}
+
+.subtitulos-carousel{
+    text-align: center !important;
+    justify-content: center !important;
+    font-size-adjust: inherit;
+}
+
+
+
+/*     background-color: rgb(47, 167, 89); */
+
+/* btn-outline-success */

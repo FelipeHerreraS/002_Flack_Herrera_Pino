@@ -1,0 +1,19 @@
+@font-face{
+    font-family: PlayFair;
+    src: url(../fonts/PlayFair/static/PlayfairDisplay-SemiBold.ttf);
+}
+
+@font-face{
+    font-family: Abel;
+    src: url(../fonts/Abel/Abel-Regular.ttf);
+}
+
+@font-face{
+    font-family: Roboto;
+    src: url(../fonts/Roboto/Roboto-Bold.ttf);
+}
+
+@font-face{
+    font-family: Josefin;
+    src: url(../fonts/Josefin/static/JosefinSans-BoldItalic.ttf);
+}

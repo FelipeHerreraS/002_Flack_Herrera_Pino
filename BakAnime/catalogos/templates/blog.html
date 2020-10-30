@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+
+
+<!DOCTYPE html>
+<html lang="es-Cl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Referencias -->
+    {% load static %}
+
+</head>
+
+<body>
+    {% block content %}
+    {% endblock %}
+    <aside class="container-right">
+        <div class="container-right-content">
+            <div>
+                <h1 style="text-align: center;">Búsqueda</h1>
+            </div>
+            <form class="form-inline search-aside">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+
+            <div>
+                <h1 style="text-align: center;">
+                    Redes Sociales
+                </h1>
+            </div>
+            <div class="container-icons">
+                <p>
+                    <a href=""><span class="iconify" data-icon="bx:bxl-facebook" data-inline="false"></span></a>
+                    <a href=""><span class="iconify" data-icon="ant-design:twitter-outlined"
+                            data-inline="false"></span></a>
+                    <a href=""><span class="iconify" data-icon="bx:bxl-instagram" data-inline="false"></span></a>
+                </p>
+            </div>
+            <div style="text-align: center;">
+                <h1 style="text-align: center;">Recientemente Agregadas</h1>
+            </div>
+            <div class="blog-center">
+                <div class="blog-center-photos">
+                {% for anime in num_blog %}
+                {% if forloop.revcounter %}
+                <a href="{% url 'anime-detail' anime.pk%}">
+                    <img src="{{ anime.image.url }}" alt=""
+                        style="max-width: 180px; padding-right: 10px; padding-left: 10px;"></a>
+                <h3 style="text-align: center; max-width: 180px; font-size: 13px; margin-right: auto; margin-left: auto;">{{ anime.tituloPag }}</h3>
+                {% endif %}
+                {% endfor %}
+            </div>
+            </div>
+        </div>
+    </aside>
+</body>
+
+</html>
+
