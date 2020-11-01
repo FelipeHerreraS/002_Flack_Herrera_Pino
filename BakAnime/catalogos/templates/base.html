@@ -2,48 +2,133 @@
 <html lang="es-Cl">
 
 <head>
-
     {% block title %}<title>BakAnimE</title>{% endblock %}
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/BakAnimE.css' %}">
-    <link rel="stylesheet" href="{% static 'css/Bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/Bak4nime.css'%}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
     <link rel="stylesheet" href="{% static 'css/owl/owl.carousel.min.css'%}">
     <link rel="stylesheet" href="{% static 'css/owl/owl.theme.default.min.css'%}">
+
 </head>
 
-<body>
-    <header class="w-auto-head headerDePana">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="{% url 'index' %}">BakAnimE</a>
-            <button class="navbar-toggler button" type="button" data-toggle="collapse"
-                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<body class="body-background">
+    <div class="contenedor">
+        <header class="header">
+			<nav class="navbar navbar-expand-lg navbar-dark">
+				<a class="navbar-brand" href="{% url 'index' %}">Bak4nimE</a>
+				<button class="navbar-toggler button" type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav my-2 my-lg-2">
-
-
-                    {% if user.is_authenticated %}
-
-                    <li class="nav-item active"><a class="nav-link" href="#">Cerrar Sesión<span
-                                class="sr-only">(current)</span></a></li>
-                    {% else %}
-                    <li class="nav-item active"><a class="nav-link" href="#">Inicio Sesión<span
-                                class="sr-only">(current)</span></a></li>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav my-2 my-lg-2">
+						<li class="nav-item active"><a class="nav-link" href="{% url 'login'%}">Iniciar Sesión<span
+									class="sr-only">(current)</span></a></li>
+						<li class="nav-item active"><a class="nav-link" href="{% url 'register'%}">Registrarse<span
+									class="sr-only">(current)</span></a></li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+        {% block content %}
+        {% endblock %}
+        <aside class="sidebar">
+            <div class="container-icons">
+                <h3>Redes Sociales</h3>
+                <div>
+                    <p>
+                        <a class="youtube"
+                            href="https://www.youtube.com/channel/UCzJ4Sdh44h2Ghlvi8g6NsPg?view_as=subscriber"
+                            target="_blank"><span class="iconify" data-icon="bx:bxl-youtube"
+                                data-inline="false"></span></a>
+                        <a href=""><span class="iconify" data-icon="ant-design:twitter-outlined"
+                                data-inline="false"></span></a>
+                        <a class="instagram" href="https://www.instagram.com/bak4nime/" target="_blank"><span
+                                class="iconify" data-icon="bx:bxl-instagram" data-inline="false"></span></a>
+                    </p>
+                </div>
+                <div>
+                    <h3 class="blog-title">Donativos</h3>
+                    <form action="https://www.paypal.com/donate" method="post" target="_top">
+                        <input type="hidden" name="hosted_button_id" value="ZNWBQJC2H8PN4" />
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"
+                            border="0" name="submit" title="PayPal - The safer, easier way to pay online!"
+                            alt="Donate with PayPal button" />
+                        <img alt="" border="0" src="https://www.paypal.com/en_CL/i/scr/pixel.gif" width="1"
+                            height="1" />
+                    </form>
+                </div>
+                <div>
+                    <h3 class="blog-title">Ultimos agregados</h3>
+                    {% for anime in last %}
+                    {% if forloop.revcounter %}
+                    <a href="{% url 'anime-detail' anime.pk%}">
+                        <img class="img-asides" src="{{ anime.image.url }}" alt=""></a>
+                    <h3
+                        style="text-align: center; max-width: 180px; font-size: 13px; margin-right: auto; margin-left: auto;">
+                        {{ anime.tituloPag }}</h3>
+                    
                     {% endif %}
-                    <li class="nav-item"><a class="nav-link" href="#">Apoyo</a></li>
-                    <li class="nav-item"><a class="nav-link disabled" href="#">Ayuda</a></li>
-                </ul>
+                    {% endfor %}
+                    </div>
             </div>
-        </nav>
-    </header>
-        {% block content %}{% endblock %}
+        </aside>
+        <footer class="footer">
+            <div class="blog-content-footer ">
+                <div class="container-body">
+                    <div class="columna1">
+                        <h1> Información de la Página</h1>
+                        <p>Esta página esta dirigida a todas aquellas personas quienes quieran descargar Anime
+                            de manera rápida, segura y completamente gratuita. El contenido en esta página no está
+                            censurado,
+                            por lo tanto se recomienda discreción.
+                        </p>
+                    </div>
 
+                    <div class="columna2">
+                        <h1>Información de Contactos</h1>
+
+                        <div class="row">
+                            <span class="iconify iconoje" data-icon="flat-color-icons:touchscreen-smartphone"
+                                data-inline="false"></span>
+                            <a
+                                href="https://api.whatsapp.com/send?phone=56932141039&text=%C2%A1Hola!%20%C2%BFPueden%20subir%20este%20anime%3A%20(Nombre)%3F">
+                                +56 9 3214 1034 </a>
+                        </div>
+
+                        <div class="row">
+                            <span class="iconify" data-icon="logos:google-gmail" data-inline="false"></span>
+                            <a
+                                href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCHrlFfLKXvMzKHsskDXpHvFDhGQxjKcxkWSmrCMKWbzVrtnKVWKLxXnHZjJfTDLmVwlhkGB">
+                                ro.pino018@gmail.com </a>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!----fin container-body (fin del mundo mundial)--->
+
+
+            </div>
+            <!----fin blog-content (fin del mundo mundial de todos los mundialeros)--->
+
+            <div class="container-footer">
+                <div class="copyright">
+                    @ 2020 Todos los Derechos Reservados |
+                    <a class="a1" href="https://www.instagram.com/felipe_herrera_s/"> FelipeNiceOP |</a>
+                    <a class="a2" href="https://www.instagram.com/camita_de_2_plazas/"> Pinaclex |</a>
+                    <a class="a3" href="https://www.instagram.com/dsmscl/"> Dusmus |</a>
+                </div>
+            </div>
+            <!----fin container-footer (fin del mundo mundial de todos los chilenos en Cihle y en el mundo)--->
+        </footer>
+    </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -54,9 +139,8 @@
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
-    <script src="{% static 'css/js/owl.carousel.js' %}"></script>
-    <script src="{% static 'css/js/app.js' %}"></script>
-
+    <script src="{% static 'js/owl.carousel.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
 </body>
 
 </html>

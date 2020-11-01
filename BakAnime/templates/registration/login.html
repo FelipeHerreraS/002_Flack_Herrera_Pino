@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content%}
+<main class="contenido">
+	<div class="text-sm-center">
+		<form class="content-login" onsubmit="return validacionLogin()" method="post">
+			<h1 class="mb-5">
+				Inicio de Sesión
+			</h1>
+			<div class="mb-3">
+				<input class="form-control p-4" type="text" name="Email" id="email"
+					placeholder="Correo Electronico">
+			</div>
+			<div class="mb-3">
+				<input class="form-control p-4" type="password" name="password" id="password"
+					placeholder="Contraseña">
+			</div>
+
+			<div class="mb-3">
+				<input style="font-size: 20px;" class="btn btn-success p-3 w-100" type="submit"
+					value="Iniciar Sesión">
+			</div>
+		</form>
+	</div>
+</main>
+{%endblock%}

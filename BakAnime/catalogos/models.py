@@ -45,4 +45,4 @@ class PostImage(models.Model):
     image = models.ImageField(upload_to='media/')
     
     def __str__(self):
-        return self.post.name
+        return self.post.tituloPag
