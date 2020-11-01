@@ -18,24 +18,28 @@
 <body class="body-background">
     <div class="contenedor">
         <header class="header">
-			<nav class="navbar navbar-expand-lg navbar-dark">
-				<a class="navbar-brand" href="{% url 'index' %}">Bak4nimE</a>
-				<button class="navbar-toggler button" type="button" data-toggle="collapse"
-					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="{% url 'index' %}">Bak4nimE</a>
+                <button class="navbar-toggler button" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav my-2 my-lg-2">
-						<li class="nav-item active"><a class="nav-link" href="{% url 'login'%}">Iniciar Sesión<span
-									class="sr-only">(current)</span></a></li>
-						<li class="nav-item active"><a class="nav-link" href="{% url 'register'%}">Registrarse<span
-									class="sr-only">(current)</span></a></li>
-					</ul>
-				</div>
-			</nav>
-		</header>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav my-2 my-lg-2">
+                        <li class="nav-item active"><a class="nav-link" href="{% url 'register'%}">Registrarse<span
+                                    class="sr-only">(current)</span></a></li>
+                        <li class="nav-item active"><a class="nav-link" href="{% url 'login'%}">Iniciar Sesión<span
+                                    class="sr-only">(current)</span></a></li>
+                        <li class="nav-item active"><a class="nav-link" href="{% url 'peticiones'%}">Peticiones Anime<span
+                                    class="sr-only">(current)</span></a></li>
+                                    <li class="nav-item active"><a class="nav-link" href="{% url 'animes'%}">Lista Animes<span
+                                        class="sr-only">(current)</span></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
         {% block content %}
         {% endblock %}
         <aside class="sidebar">
@@ -68,15 +72,15 @@
                     <h3 class="blog-title">Ultimos agregados</h3>
                     {% for anime in last %}
                     {% if forloop.revcounter %}
-                    <a href="{% url 'anime-detail' anime.pk%}">
+                    <a href="{% url 'blog-detail' anime.pk%}">
                         <img class="img-asides" src="{{ anime.image.url }}" alt=""></a>
                     <h3
                         style="text-align: center; max-width: 180px; font-size: 13px; margin-right: auto; margin-left: auto;">
                         {{ anime.tituloPag }}</h3>
-                    
+
                     {% endif %}
                     {% endfor %}
-                    </div>
+                </div>
             </div>
         </aside>
         <footer class="footer">

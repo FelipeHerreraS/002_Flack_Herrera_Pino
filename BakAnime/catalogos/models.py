@@ -46,3 +46,10 @@ class PostImage(models.Model):
     
     def __str__(self):
         return self.post.tituloPag
+
+#class Peticiones(models.Model):
+#    usuario = models.TextField(max_length=100, null=True)
+#    email = models.EmailField(max_length=100, null=True)
+#    nomAnime =models.TextField(max_length=200, null=True)
+#    def __str__(self):
+#        return self.usuario

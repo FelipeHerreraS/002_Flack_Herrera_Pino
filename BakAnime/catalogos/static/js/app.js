@@ -74,3 +74,32 @@ function validacionLogin(){
     
 
 }
+
+function validacionPeti(){
+    nom    = document.getElementById('usuario').value;
+    correo =  document.getElementById("email").value;
+    nomAnime    = document.getElementById('name').value;
+    expReg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+
+    if(nom = null || nom.length == 0 || /^\s+$/.test(nom)){
+        alert('Error... Por favor, ingrese su usuario ');
+        document.datos.nom.focus();
+        return false;
+    }
+
+    if(!expReg.test(correo)){
+        alert("El correo no es válido")
+        return false;
+    }
+    
+    if(nomAnime = null || nomAnime.length == 0 || /^\s+$/.test(nomAnime)){
+        alert('Error... Por favor, ingresar Nombre Anime');
+        document.datos.nomAnime.focus();
+        return false;
+    }
+
+    console.log("Petición Enviada Con Éxito");
+    alert('Petición Enviada Con Éxito')
+    document.datos.clear
+    return true;
+}

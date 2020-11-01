@@ -4,8 +4,9 @@ from .models import PostImage, Anime, Genero
 # Register your models here.
 
 #admin.site.register(Anime)
-#admin.site.register(PostImage)
+#admin.site.register(PostImage)  
 admin.site.register(Genero)
+#admin.site.register(Peticiones)
 
 class PostImageAdmin(admin.StackedInline):
     model = PostImage

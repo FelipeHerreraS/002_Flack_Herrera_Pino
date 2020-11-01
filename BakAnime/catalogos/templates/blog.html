@@ -1,144 +1,75 @@
 {% extends "base.html" %}
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<link rel="stylesheet" href="../assests/Bak4nime.css">
-	<link rel="stylesheet" href="../assests/bootstrap.min.css">
-</head>
-
-<body class="body-background">
-		<main class="contenido">
-			<h2 style="text-align: center;">Descargar High School DxD Full HD Blu-Ray (Mega / Mediafire)</h2>
+{% load static %}	
+	{% block content %}
+	{{ anime.url }}
+	<main class="contenido">
+		<h2 style="text-align: center;">{{ anime.tituloPag }}</h2>
+		<div>
 			<div>
-				<div>
-					<h3 class="blog-title">Sinopsis</h3>
-					<div class="blog-text">
-						<p>
-							Issei Hyodo es un estudiante de secundaria en la Academia Kuo que forma parte de un trío
-							de
-							pervertidos, un día aparece una chica llamada Amano Yuma que se confiesa a Issei por lo
-							que
-							tienen una cita. Al anochecer Yuma lleva a Issei a un lugar apartado donde se convierte
-							en
-							su forma real como ángel caído y lo mata. Rias Gremory, una demonio de alto rango lo
-							resucita como demonio por lo que Issei será un sirviente de Rias y parte del Clan
-							Gremory.
-						</p>
-					</div>
+				<h3 class="blog-title">Sinopsis</h3>
+				<div class="blog-text">
+					<p>{{ anime.sinopsis }}.</p>
 				</div>
-				<div class="blog-title">
-					<h3>Galeria</h3>
-					<div>
-						<div class="mg">
-							<div>
-								<p><a href=""><img class="mg" src="../assests/img/blog/High-School-DXD-Season-1.png"
-											alt=""></a></p>
-							</div>
+			</div>
+			<div class="blog-title">
+				<h3>Galeria</h3>
+				<div>
+					<div class="">
+						<div>
+							<p><a href=""><img class="mg" src="{{ anime.image.url }}" alt=""></a></p>
 						</div>
 					</div>
 				</div>
+			</div>
+			<div>
+				<h3 class="blog-title">Información</h3>
+				<div class="blog-information justify-content-center">
+					<span class="blog-center" style="color: #ff0000">Capitulos: </span><label for="">{{ anime.duracion }}</label>
+					<br>
+					<span style="color: #ff0000">Duración: </span><label for="">{{ anime.generos.all|join:", " }}</label>
+					<br>
+					<span style="color: #ff0000">Géneros: </span><label for="">{{ anime.año }}</label>
+					<br>
+					<span style="color: #ff0000">Año: </span><label for="">{{ anime.año }}</label>
+					<br>
+					<span style="color: #ff0000">Peso (Capítulo): </span><label for="">{{ anime.peso }}</label>
+					<br>
+					<span style="color: #ff0000">Subtítulos: </span><label for="">{{ anime.subtitulos}}</label>
+					<br>
+					<span style="color: #ff0000">Calidad: </span><label for="">{{ anime.calidad }}</label>
+					<br>
+					<span style="color: #ff0000">Formato: </span><label for="">{{ anime.formato }}</label>
+					<br>
+					<span style="color: #ff0000">Tipo: </span><label for="">{{ anime.tipo }}</label>
+					<br>
+					<span style="color: #ff0000">Desnudos: </span><label for="">{{ anime.desnudos}}</label>
+					<br>
+					<span style="color: #ff0000">Censura: </span><label for="">{{ anime.censura }}</label>
+					<br>
+				</div>
+			</div>
+			<div>
+				<h3 class="blog-title">Descargas</h3>
 				<div>
-					<h3 class="blog-title">Información</h3>
-					<div class="blog-information justify-content-center">
-						<span class="blog-center" style="color: #ff0000">Capitulos: </span><label for="">12/12</label>
-						<br>
-						<span style="color: #ff0000">Duración: </span><label for="">24 min</label>
-						<br>
-						<span style="color: #ff0000">Géneros: </span><label for="">Comedia, Harem, Romance,
-							Fantasía,
-							Ecchi</label>
-						<br>
-						<span style="color: #ff0000">Año: </span><label for="">2013</label>
-						<br>
-						<span style="color: #ff0000">Peso (Capítulo): </span><label for="">1,3GB aprox.</label>
-						<br>
-						<span style="color: #ff0000">Subtítulos: </span><label for="">Español</label>
-						<br>
-						<span style="color: #ff0000">Calidad: </span><label for="">1080p Full HD</label>
-						<br>
-						<span style="color: #ff0000">Formato: </span><label for="">Mkv</label>
-						<br>
-						<span style="color: #ff0000">Tipo: </span><label for="">Blu-Ray</label>
-						<br>
-						<span style="color: #ff0000">Desnudos: </span><label for="">Sí</label>
-						<br>
-						<span style="color: #ff0000">Censura: </span><label for="">No</label>
-						<br>
-					</div>
-				</div>
-				<div>
-					<h3 class="blog-title">Descargas</h3>
-					<div>
-						<table class="table table-bordered">
-							<thead>
-								<th>Episodios</th>
-								<th>Servidores</th>
-							</thead>
-							<tbody>
-								<tr>
-									<td>Episodios 01-12</td>
-									<td style="align-items: center; justify-content: center;" class="table-responsive-sm-1">
-										<a href="https://mega.nz/" target="_blamk">
-											<img class="table-img" src="../assests/img/mega.png" alt="Mega"></a>
-										<a href="https://app.mediafire.com/myfiles" target="_blamk">
-											<img class="table-img" src="../assests/img/media-fire.png"
-												alt="Mediafire"></a>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+					<table class="table table-bordered">
+						<thead>
+							<th>Episodios</th>
+							<th>Servidores</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Episodios 01-12</td>
+								<td style="align-items: center; justify-content: center;" class="table-responsive-sm-1">
+									<a href="https://mega.nz/" target="_blamk">
+										<img class="table-img" src="../../static/img/mega.png" alt="Mega"></a>
+									<a href="https://app.mediafire.com/myfiles" target="_blamk">
+										<img class="table-img" src="../../static/img/media-fire.png" alt="Mediafire"></a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</div>
-		</main>
-		<footer class="footer">
-			<div class="blog-content-footer ">
-				<div class="container-body">
-					<div class="columna1">
-						<h1> Información de la Página</h1>
-						<p>Esta página esta dirigida a todas aquellas personas quienes quieran descargar Animé
-							completamente gratis.
-						</p>
-					</div>
-
-					<div class="columna2">
-						<h1>Información de Contactos</h1>
-
-						<div class="row">
-							<img src="../assests/img/logo_celular.png">
-							<a href=""> +56 9 3214 1034 </a>
-						</div>
-
-						<div class="row">
-							<img src="../assests/img/logo_correo.png">
-							<a href=""> ro.pino018@gmail.com </a>
-						</div>
-					</div>
-
-
-				</div>
-				<!----fin container-body (fin del mundo mundial)--->
-
-
-			</div>
-			<!----fin blog-content (fin del mundo mundial de todos los mundialeros)--->
-
-			<div class="container-footer">
-				<div class="copyright">
-					@ 2020 Todos los Derechos Reservados |
-					<a1 href="https://www.instagram.com/felipe_herrera_s/"> FelipeNiceOP |</a1>
-					<a2 href="https://www.instagram.com/camita_de_2_plazas/"> Pinaclex |</a2>
-					<a3 href="https://www.instagram.com/dsms/"> Dusmus |</a3>
-				</div>
-			</div>
-			<!----fin container-footer (fin del mundo mundial de todos los chilenos en Cihle y en el mundo)--->
-		</footer>
-	</div>
-
-</html>
+		</div>
+	</main>
+{% endblock %}

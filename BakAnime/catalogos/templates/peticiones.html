@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+
+{% load static%}
+
+{% block content%}
+<main class="contenido">
+	<div class="text-sm-center">
+		<h1 class="mb-5">
+			Petición Anime
+		</h1>
+        <form class="content-login" enctype="multipart/form-data" method="POST">
+            {% csrf_token %}
+        
+            {{ form.as_p }}
+
+			<div class="mb-3">
+				<input style="font-size: 20px;" class="btn btn-success p-3 w-100" type="submit"
+					value="Enviar Petición">
+            </div>
+        
+		</form>
+	</div>
+</main>
+{%endblock%}

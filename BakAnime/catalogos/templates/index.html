@@ -12,7 +12,7 @@
 		{% for anime in last %}
 		{% if forloop.revcounter %}
 		<div>
-			<a href="{% url 'anime-detail' anime.pk%}">
+			<a href="{% url 'blog-detail' anime.pk%}">
 				<img class="" src="{{ anime.image.url }}" alt=""></a>
 			<h3 style="text-align: center;">{{ anime.tituloPag}} </h3>
 		</div>

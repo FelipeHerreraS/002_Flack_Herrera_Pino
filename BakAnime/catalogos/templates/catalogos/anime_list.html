@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block content %}
+<main class="contenido">
+	<div>
+		<h1 class="blog-title">Animes</h1>
+	</div>
+
+	{% if animes_list %}
+
+        <ul>
+            {% for anime in animes_list %}
+			
+			<div>
+				<a href="{{  animes.get_absolute_url  }}"><img src="{{ anime.image.url }}" alt=""></a>
+			</div>
+
+			{% endfor %}
+			
+        </ul>
+
+    {% else %}
+        <h3>No hay Animes disponibles, todavía en nuestro servidor. Por favor intente más tarde</h3>
+    {% endif %}
+</main>
+
+
+{% endblock %}
