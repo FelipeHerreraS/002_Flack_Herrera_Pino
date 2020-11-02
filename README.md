@@ -6,7 +6,7 @@ contraseña: geovanito9
 
 ip: 
 http://127.0.0.1:8000/catalogos     (Página Principal)
-http://127.0.0.1:8000/catalogos     (Administrador)
+http://127.0.0.1:8000/admin     (Administrador)
 
 Proyecto de Página oficial de BakAnime
 Contribuciones:
