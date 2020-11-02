@@ -47,40 +47,26 @@
                 <h3>Redes Sociales</h3>
                 <div>
                     <p>
-                        <a class="youtube"
-                            href="https://www.youtube.com/channel/UCzJ4Sdh44h2Ghlvi8g6NsPg?view_as=subscriber"
-                            target="_blank"><span class="iconify" data-icon="bx:bxl-youtube"
-                                data-inline="false"></span></a>
-                        <a href=""><span class="iconify" data-icon="ant-design:twitter-outlined"
-                                data-inline="false"></span></a>
-                        <a class="instagram" href="https://www.instagram.com/bak4nime/" target="_blank"><span
-                                class="iconify" data-icon="bx:bxl-instagram" data-inline="false"></span></a>
+                        <a class="youtube" href="https://www.youtube.com/channel/UCzJ4Sdh44h2Ghlvi8g6NsPg?view_as=subscriber"
+                            target="_blank"><span class="iconify" data-icon="bx:bxl-youtube" data-inline="false"></span></a>
+                        <a href=""><span class="iconify" data-icon="ant-design:twitter-outlined" data-inline="false"></span></a>
+                        <a class="instagram" href="https://www.instagram.com/bak4nime/" target="_blank"><span class="iconify"
+                                data-icon="bx:bxl-instagram" data-inline="false"></span></a>
                     </p>
                 </div>
                 <div>
                     <h3 class="blog-title">Donativos</h3>
                     <form action="https://www.paypal.com/donate" method="post" target="_top">
                         <input type="hidden" name="hosted_button_id" value="ZNWBQJC2H8PN4" />
-                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"
-                            border="0" name="submit" title="PayPal - The safer, easier way to pay online!"
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0"
+                            name="submit" title="PayPal - The safer, easier way to pay online!"
                             alt="Donate with PayPal button" />
-                        <img alt="" border="0" src="https://www.paypal.com/en_CL/i/scr/pixel.gif" width="1"
-                            height="1" />
+                        <img alt="" border="0" src="https://www.paypal.com/en_CL/i/scr/pixel.gif" width="1" height="1" />
                     </form>
                 </div>
-                <div>
-                    <h3 class="blog-title">Ultimos agregados</h3>
-                    {% for anime in last %}
-                    {% if forloop.revcounter %}
-                    <a href="{% url 'blog-detail' anime.pk%}">
-                        <img class="img-asides" src="{{ anime.image.url }}" alt=""></a>
-                    <h3
-                        style="text-align: center; max-width: 180px; font-size: 13px; margin-right: auto; margin-left: auto;">
-                        {{ anime.tituloPag }}</h3>
-
-                    {% endif %}
-                    {% endfor %}
-                </div>
+                {% block ultimate%}
+                
+                {%endblock%}
             </div>
         </aside>
         <footer class="footer">

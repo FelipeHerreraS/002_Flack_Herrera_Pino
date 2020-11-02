@@ -2,29 +2,23 @@
 
 {% load static %}
 
-
 {% block content %}
 <main class="contenido">
+	{% if anime_list %}
+
+	{% for anime in anime_list %}
 	<div>
-		<h1 class="blog-title">Animes</h1>
+		<a href="{% url 'blog-detail' anime.pk%}">
+			<img class="mg" src="{{ anime.image.url }}" alt=""></a>
+		<h3 style="text-align: center;">{{ anime.tituloPag}} </h3>
 	</div>
+	{% endfor %}
 
-	{% if animes_list %}
-
-        <ul>
-            {% for anime in animes_list %}
-			
-			<div>
-				<a href="{{  animes.get_absolute_url  }}"><img src="{{ anime.image.url }}" alt=""></a>
-			</div>
-
-			{% endfor %}
-			
-        </ul>
 
     {% else %}
-        <h3>No hay Animes disponibles, todavía en nuestro servidor. Por favor intente más tarde</h3>
+      <p>Lo sentimos, todavía no se han agregado Animes en nuestro Servidor.</p>
     {% endif %}
+
 </main>
 
 

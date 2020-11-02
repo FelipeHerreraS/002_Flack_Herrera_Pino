@@ -33,12 +33,13 @@ class Anime(models.Model):
     tipo = models.CharField(max_length=20, null=True)
     desnudos = models.CharField(max_length=2, null=True)
     censura = models.CharField(max_length=2, null=True)
+    time = models.TimeField(auto_now=True)
 
     def __str__(self):
         return self.tituloPag
 
     def get_absolute_url(self):
-        return reverse('anime-detail', args=[str(self.id)])
+        return reverse('blog-detail', args=[str(self.id)])
 
 class PostImage(models.Model):
     post = models.ForeignKey(Anime, default=None, on_delete=models.CASCADE)
@@ -47,9 +48,9 @@ class PostImage(models.Model):
     def __str__(self):
         return self.post.tituloPag
 
-#class Peticiones(models.Model):
-#    usuario = models.TextField(max_length=100, null=True)
-#    email = models.EmailField(max_length=100, null=True)
-#    nomAnime =models.TextField(max_length=200, null=True)
-#    def __str__(self):
-#        return self.usuario
+class Peticiones(models.Model):
+    usuario = models.TextField(max_length=100, null=True)
+    email = models.EmailField(max_length=100, null=True)
+    nomAnime =models.TextField(max_length=200, null=True)
+    def __str__(self):
+        return self.usuario

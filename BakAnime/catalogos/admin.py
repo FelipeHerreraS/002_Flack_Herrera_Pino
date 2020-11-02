@@ -1,12 +1,12 @@
 from django.contrib import admin
 
-from .models import PostImage, Anime, Genero
+from .models import PostImage, Anime, Genero, Peticiones
 # Register your models here.
 
 #admin.site.register(Anime)
 #admin.site.register(PostImage)  
 admin.site.register(Genero)
-#admin.site.register(Peticiones)
+admin.site.register(Peticiones)
 
 class PostImageAdmin(admin.StackedInline):
     model = PostImage

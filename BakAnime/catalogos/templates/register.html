@@ -3,7 +3,7 @@
 {% block content %}
 <main class="contenido">
 	<div class="text-sm-center">
-		<form class="content-login" method="post">
+		<form class="content-login" method="post">{% csrf_token %}
 			<h1 class="mb-5">
 				Registrarse 
 			</h1>

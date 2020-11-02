@@ -9,8 +9,8 @@
 		<h1 class="blog-title">Ultimos Agregados</h1>
 	</div>
 	<div class="owl-carousel owl-theme">
-		{% for anime in last %}
-		{% if forloop.revcounter %}
+		{% for anime in last%}
+		{% if forloop.counter %}
 		<div>
 			<a href="{% url 'blog-detail' anime.pk%}">
 				<img class="" src="{{ anime.image.url }}" alt=""></a>
@@ -20,6 +20,21 @@
 		{% endfor %}
 	</div>
 </main>
+{%endblock%}
+{%block ultimate%}
+<div>
+	<h3 class="blog-title">Ultimos agregados</h3>
+	{% for anime in last %}
+	{% if forloop.revcounter %}
+	<a href="{% url 'blog-detail' anime.pk%}">
+		<img class="img-asides" src="{{ anime.image.url }}" alt=""></a>
+	<h3 style="text-align: center; max-width: 180px; font-size: 13px; margin-right: auto; margin-left: auto;">
+		{{ anime.tituloPag }}</h3>
+
+	{% endif %}
+	{% endfor %}
+</div>
+
 
 
 {% endblock %}

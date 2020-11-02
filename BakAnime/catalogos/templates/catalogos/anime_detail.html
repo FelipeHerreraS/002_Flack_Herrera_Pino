@@ -1,75 +1,76 @@
 {% extends "base.html" %}
-{% load static %}	
-	{% block content %}
-	{{ anime.url }}
-	<main class="contenido">
-		<h2 style="text-align: center;">{{ anime.tituloPag }}</h2>
+{% load static %}
+{% block content %}
+{{ anime.url }}
+<main class="contenido">
+	<h2 style="text-align: center;">{{ anime.tituloPag }}</h2>
+	<div>
 		<div>
-			<div>
-				<h3 class="blog-title">Sinopsis</h3>
-				<div class="blog-text">
-					<p>{{ anime.sinopsis }}.</p>
-				</div>
+			<h3 class="blog-title">Sinopsis</h3>
+			<div class="blog-text">
+				<p>{{ anime.sinopsis }}.</p>
 			</div>
-			<div class="blog-title">
-				<h3>Galeria</h3>
-				<div>
-					<div class="">
-						<div>
-							<p><a href=""><img class="mg" src="{{ anime.image.url }}" alt=""></a></p>
-						</div>
+		</div>
+		<div class="blog-title">
+			<h3>Galeria</h3>
+			<div>
+				<div class="">
+					<div>
+						<p><a href=""><img class="mg" src="{{ anime.image.url }}" alt=""></a></p>
 					</div>
 				</div>
 			</div>
-			<div>
-				<h3 class="blog-title">Información</h3>
-				<div class="blog-information justify-content-center">
-					<span class="blog-center" style="color: #ff0000">Capitulos: </span><label for="">{{ anime.duracion }}</label>
-					<br>
-					<span style="color: #ff0000">Duración: </span><label for="">{{ anime.generos.all|join:", " }}</label>
-					<br>
-					<span style="color: #ff0000">Géneros: </span><label for="">{{ anime.año }}</label>
-					<br>
-					<span style="color: #ff0000">Año: </span><label for="">{{ anime.año }}</label>
-					<br>
-					<span style="color: #ff0000">Peso (Capítulo): </span><label for="">{{ anime.peso }}</label>
-					<br>
-					<span style="color: #ff0000">Subtítulos: </span><label for="">{{ anime.subtitulos}}</label>
-					<br>
-					<span style="color: #ff0000">Calidad: </span><label for="">{{ anime.calidad }}</label>
-					<br>
-					<span style="color: #ff0000">Formato: </span><label for="">{{ anime.formato }}</label>
-					<br>
-					<span style="color: #ff0000">Tipo: </span><label for="">{{ anime.tipo }}</label>
-					<br>
-					<span style="color: #ff0000">Desnudos: </span><label for="">{{ anime.desnudos}}</label>
-					<br>
-					<span style="color: #ff0000">Censura: </span><label for="">{{ anime.censura }}</label>
-					<br>
-				</div>
-			</div>
-			<div>
-				<h3 class="blog-title">Descargas</h3>
-				<div>
-					<table class="table table-bordered">
-						<thead>
-							<th>Episodios</th>
-							<th>Servidores</th>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Episodios 01-12</td>
-								<td style="align-items: center; justify-content: center;" class="table-responsive-sm-1">
-									<a href="https://mega.nz/" target="_blamk">
-										<img class="table-img" src="../../static/img/mega.png" alt="Mega"></a>
-									<a href="https://app.mediafire.com/myfiles" target="_blamk">
-										<img class="table-img" src="../../static/img/media-fire.png" alt="Mediafire"></a>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+		</div>
+		<div>
+			<h3 class="blog-title">Información</h3>
+			<div class="blog-information justify-content-center">
+				<span class="blog-center" style="color: #ff0000">Capitulos: </span><label
+					for="">{{ anime.duracion }}</label>
+				<br>
+				<span style="color: #ff0000">Duración: </span><label for="">{{ anime.generos.all|join:", " }}</label>
+				<br>
+				<span style="color: #ff0000">Géneros: </span><label for="">{{ anime.año }}</label>
+				<br>
+				<span style="color: #ff0000">Año: </span><label for="">{{ anime.año }}</label>
+				<br>
+				<span style="color: #ff0000">Peso (Capítulo): </span><label for="">{{ anime.peso }}</label>
+				<br>
+				<span style="color: #ff0000">Subtítulos: </span><label for="">{{ anime.subtitulos}}</label>
+				<br>
+				<span style="color: #ff0000">Calidad: </span><label for="">{{ anime.calidad }}</label>
+				<br>
+				<span style="color: #ff0000">Formato: </span><label for="">{{ anime.formato }}</label>
+				<br>
+				<span style="color: #ff0000">Tipo: </span><label for="">{{ anime.tipo }}</label>
+				<br>
+				<span style="color: #ff0000">Desnudos: </span><label for="">{{ anime.desnudos}}</label>
+				<br>
+				<span style="color: #ff0000">Censura: </span><label for="">{{ anime.censura }}</label>
+				<br>
 			</div>
 		</div>
-	</main>
+		<div>
+			<h3 class="blog-title">Descargas</h3>
+			<div>
+				<table class="table table-bordered">
+					<thead>
+						<th>Episodios</th>
+						<th>Servidores</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Episodios 01-12</td>
+							<td style="align-items: center; justify-content: center;" class="table-responsive-sm-1">
+								<a href="https://mega.nz/" target="_blamk">
+									<img class="table-img" src="../../static/img/mega.png" alt="Mega"></a>
+								<a href="https://app.mediafire.com/myfiles" target="_blamk">
+									<img class="table-img" src="../../static/img/media-fire.png" alt="Mediafire"></a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</main>
 {% endblock %}

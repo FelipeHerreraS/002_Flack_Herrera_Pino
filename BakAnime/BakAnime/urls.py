@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path ('catalogos/', include('catalogos.urls')),
     path ('accounts/', include('django.contrib.auth.urls')),
-    path('Peticiones/', views.peticiones, name='peticiones'),
+    path('Peticiones/', views.peticionesR, name='peticiones'),
     path('Animes/', views.AnimeListView.as_view(), name='animes'),
     #path(r'^catalogo/', include('catalogo.urls'))
 ]
