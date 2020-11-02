@@ -1,0 +1,6 @@
+usuario: BakAnime
+contraseña: geovanito9
+
+ip: 
+http://127.0.0.1:8000/catalogos		Pagina Principal
+http://127.0.0.1:8000/admin		Admin
